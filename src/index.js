@@ -2,8 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import './index.css';
+import SettingsProvider from './Components/Context/Settings/SettingsProvider';
+
 
 ReactDOM.render(
-  <App />, 
+  <SettingsProvider>
+  <App />
+</SettingsProvider>, 
   document.getElementById('root')
 );
