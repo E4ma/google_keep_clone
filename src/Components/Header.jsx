@@ -3,21 +3,19 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
 import EmojiObjectsIcon from '../../node_modules/@material-ui/icons/EmojiObjects';
-import clsx from 'clsx';
-import { makeStyles } from '../../node_modules/@material-ui/core/styles';
-import Drawer from '../../node_modules/@material-ui/core/Drawer';
-import List from '../../node_modules/@material-ui/core/List';
-import Divider from '../../node_modules/@material-ui/core/Divider';
-import ListItem from '../../node_modules/@material-ui/core/ListItem';
-import ListItemIcon from '../../node_modules/@material-ui/core/ListItemIcon';
-import ListItemText from '../../node_modules/@material-ui/core/ListItemText';
-import InboxIcon from '../../node_modules/@material-ui/icons/MoveToInbox';
-import MailIcon from '../../node_modules/@material-ui/icons/Mail';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './Header.css';
 
-const Header = () => {
+const styles = theme => ({
+    root: {
+        paddingLeft: 55,
+    },
+  });
+
+const Header = ({classes}) => {
 
 
 
@@ -25,7 +23,7 @@ const Header = () => {
     return (
         <>
             <AppBar position="static" className="bg-warning py-1">
-                <Toolbar>
+                <Toolbar className={classes.root}>
 
                     <IconButton edge="start" color="inherit" aria-label="menu" className="iconBtn">
                         <EmojiObjectsIcon fontSize="large" />
@@ -39,5 +37,7 @@ const Header = () => {
         </>
     );
 }
-
-export default Header;
+Header.propTypes = {
+    classes: PropTypes.object,
+  };
+export default withStyles(styles) (Header);

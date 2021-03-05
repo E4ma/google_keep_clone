@@ -9,13 +9,14 @@ import MenuIcon from '@material-ui/icons/Menu';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import SettingsContext from './Context/Settings/SettingsContext';
+import EmojiObjectsIcon from '../../node_modules/@material-ui/icons/EmojiObjects';
 
 
 const styles = theme => ({
   root: {
     position: 'fixed',
     top: 5,
-    right: 5,
+    left: 5,
   },
   drawer: {
     width: 250,
@@ -29,7 +30,7 @@ const styles = theme => ({
     width: 200,
   },
 });
-const Drawer = ({ classes, align = 'right'}) => {
+const Drawer = ({ classes, align = 'right' }) => {
   const context = useContext(SettingsContext);
   const [open, setOpen] = useState(false);
 
@@ -50,44 +51,32 @@ const Drawer = ({ classes, align = 'right'}) => {
         onClose={() => setOpen(false)}
         onOpen={() => setOpen(true)}
       >
-       <div className={classes.drawer}>
-         <Typography
-          component="h5"
-          variant="h6"
-          align="center"
-          style={{
-            margin: 10,
-          }}
-       >
-         Keep
-       </Typography>
-       <Divider />
-       <div className={classes.drawerItem}>
-         <FormControlLabel
-           control={
-             <Switch
-               checked={context.darkMode}
-               onChange={() => context.onSetDarkMode(!context.darkMode)}
-             />
-           }
-           label="Dark Mode"
-         />
-                  <Typography
-          component="h5"
-          variant="h6"
-          align="center"
-          style={{
-            margin: 10,
-          }}
-       >
-         Notes Reminders Edit labels Archive Bin
-       </Typography>
-       
-       </div>
-      </div>
-    </SwipeableDrawer>
-  </div>
- );
+        <div className={classes.drawer}>
+
+          <IconButton edge="start" color="inherit" aria-label="menu" className="iconBtn">
+            <EmojiObjectsIcon fontSize="large" />
+          </IconButton>
+          <Typography variant="h5">
+            <span className="brandName">Keep</span>
+          </Typography>
+
+          <Divider />
+          <div className={classes.drawerItem}>
+            <FormControlLabel
+              control={
+                <Switch
+                  checked={context.darkMode}
+                  onChange={() => context.onSetDarkMode(!context.darkMode)}
+                />
+              }
+              label="Dark Mode"
+            />
+
+          </div>
+        </div>
+      </SwipeableDrawer>
+    </div>
+  );
 };
 Drawer.propTypes = {
   classes: PropTypes.object,
