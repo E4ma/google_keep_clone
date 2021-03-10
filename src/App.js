@@ -10,16 +10,16 @@ import CreateNote from './components/CreateNote';
 import SettingsContext from './context/Settings/SettingsContext';
 
 
-const styles = theme => ({
-  root: {
-    flexGrow: 1,
-    height: '100%',
-  },
-  paper: {
-    width: 350,
-    height: 400,
-  },
-});
+// const styles = theme => ({
+//   root: {
+//     flexGrow: 1,
+//     height: '100%',
+//   },
+//   paper: {
+//     width: 350,
+//     height: 400,
+//   },
+// });
 
 
 const App = ({ classes }) => {

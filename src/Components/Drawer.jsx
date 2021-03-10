@@ -18,6 +18,9 @@ const styles = theme => ({
     top: 5,
     left: 5,
   },
+  menuIcon: {
+    paddingTop: 10,
+  },
   drawer: {
     width: 250,
   },
