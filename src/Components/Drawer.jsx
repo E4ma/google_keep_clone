@@ -8,8 +8,8 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
-import SettingsContext from './Context/Settings/SettingsContext';
-import EmojiObjectsIcon from '../../node_modules/@material-ui/icons/EmojiObjects';
+import SettingsContext from '../context/Settings/SettingsContext';
+// import EmojiObjectsIcon from '../../node_modules/@material-ui/icons/EmojiObjects';
 
 
 const styles = theme => ({
@@ -53,12 +53,12 @@ const Drawer = ({ classes, align = 'right' }) => {
       >
         <div className={classes.drawer}>
 
-          <IconButton edge="start" color="inherit" aria-label="menu" className="iconBtn">
+          {/* <IconButton edge="start" color="inherit" aria-label="menu" className="iconBtn">
             <EmojiObjectsIcon fontSize="large" />
           </IconButton>
           <Typography variant="h5">
             <span className="brandName">Keep</span>
-          </Typography>
+          </Typography> */}
 
           <Divider />
           <div className={classes.drawerItem}>

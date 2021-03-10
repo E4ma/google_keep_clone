@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import './index.css';
-import SettingsProvider from './Components/Context/Settings/SettingsProvider';
+import SettingsProvider from './context/Settings/SettingsProvider';
 
 
 ReactDOM.render(
